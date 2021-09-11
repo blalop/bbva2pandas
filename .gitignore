@@ -1,10 +1,21 @@
+#Python
 __pycache__
+*.py[cod]
 .ipynb_checkpoints
 .mypy_cache
+Pipfile*
+build
+dist
+wheels
+*.egg-info
+.installed.cfg
+*.egg
 
+# Project related
 reports
 *.csv
 *.db
 
+# IDE
 .vscode
 .idea
