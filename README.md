@@ -7,6 +7,14 @@ Library + script to extract your bank account movements from the pdf reports tha
 
 A [Grafana dashboard](grafana/bank_movements.json) is provided to visualize this data.
 
+## Dependencies
+
+The following libpoppler dependencies are needed for pdftotext:
+
+```bash
+sudo apt install build-essential libpoppler-cpp-dev pkg-config python3-dev
+```
+
 ## Downloading the reports
 
 In [bbva.es](https://bbva.es), login and go to Posición global > Cuentas y Tarjetas > Ficha. Then click Operaciones > Extracto mensual cuentas. Ready to go!
