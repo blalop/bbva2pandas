@@ -1,31 +1,51 @@
 # BBVA reports extractor
-[![Build Status](https://travis-ci.com/blalop/accountman.svg?branch=master)](https://travis-ci.com/blalop/accountman)
+![Build status](https://github.com/blalop/bbva2pandas/workflows/test.yml/badge.svg)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-Script to extract your bank account movements from the pdf reports that BBVA provides each month. Export it to csv, sqlite or mysql.
+Library + script to extract your bank account movements from the pdf reports that BBVA provides each month. Export it to csv or sqlite.
 
 A [Grafana dashboard](grafana/bank_movements.json) is provided to visualize this data.
+
+## Dependencies
+
+The following libpoppler dependencies are needed for pdftotext:
+
+```bash
+sudo apt install build-essential libpoppler-cpp-dev pkg-config python3-dev
+```
 
 ## Downloading the reports
 
 In [bbva.es](https://bbva.es), login and go to Posición global > Cuentas y Tarjetas > Ficha. Then click Operaciones > Extracto mensual cuentas. Ready to go!
 
+## Using the libray
+
+You can either provide the file to be read or the raw string:
+
+```python
+from bbva2pandas.file_handler import read_report
+with open(filename, 'rb') as f:
+    dataframe = read_report(f)
+```
+
+```python
+from bbva2pandas.report_parser import parse_report_content
+dataframe = report_parser.parse_report_content('filecontent')
+```
+
 ## Running the script
 
+The provided script loads all the PDFs in the provided directory and generates a CSV/sqlite file
 ```
-usage: extract.py [-h] [--mysql_driver MYSQL_DRIVER] [--mysql_string MYSQL_STRING] directory {csv,sqlite,mysql}
+usage: bbva2pandas [-h] [--output_filename OUTPUT_FILENAME] directory {csv,sqlite}
+bbva2pandas: error: the following arguments are required: directory, output_format
+```
 
-Extracts data from BBVA reports PDF files
+## Testing
 
-positional arguments:
-  directory             Directory of the PDF files
-  {csv,sqlite,mysql}    Output format
+Run
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --mysql_driver MYSQL_DRIVER
-                        MySQL driver, default: mariadb+pymysql
-  --mysql_string MYSQL_STRING
-                        MySQL connection string, default: user:pass@localhost:3306/db
+```bash
+python3 -m unittest discover tests
 ```

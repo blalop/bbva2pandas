@@ -1,0 +1,12 @@
+                                                            EXTRACTO MENSUAL DE CUENTAS PERSONALES
+ EXTRACTO DE AGOSTO 2050                                                                                               Fecha de emisión: 01/09/2050
+ IBAN ES68 1234 5678 1234 5678 1234                            BIC:                                                                        HOJA    001
+ Titulares:      JOHN DOE GARCIA
+F.Oper.       F.Valor                                         Concepto                                   Importe                    Saldo
+                          SALDO ANTERIOR - - - - - - - - - - - - - - - - - - - - -                                                              0,00
+05/08 05/08               TRANSFERENCIAS                                                                         42,00                        42,00
+                           X
+   Todos los importes de este extracto se expresan en:                             SALDO A NUESTRO FAVOR               SALDO A SU FAVOR
+   EURO                                                                                                                                42,00
+                                                                                                                                            F12345
+       W123456789012345678901-00-1234567890123456789010123456O

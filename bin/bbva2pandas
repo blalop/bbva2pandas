@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import argparse
+import glob
+import sqlite3
+
+import pandas as pd
+import sys
+import os
+
+try:
+    from bbva2pandas.file_handler import read_report
+except ImportError:
+    sys.path.append(os.path.abspath('./'))
+    from bbva2pandas.file_handler import read_report
+
+
+def read_report_file(filename: str) -> pd.DataFrame:
+    with open(filename, 'rb') as f:
+        return read_report(f)
+
+
+def extract_directory(dirname: str) -> pd.DataFrame:
+    filenames = glob.glob(f'{dirname}/*.pdf')
+    if len(filenames) == 0:
+        raise ValueError(f'No PDF founds in {dirname}')
+
+    dataframes = map(read_report_file, filenames)
+    return pd.concat(dataframes)
+
+
+def main(directory: str, output_format: str, output_filename: str) -> None:
+    dataframe = extract_directory(directory)
+    if output_format == 'csv':
+        dataframe.to_csv(f'{output_filename}.csv', sep='|', index=False)
+    elif output_format == 'sqlite':
+        dataframe.to_sql(output_filename.upper(), sqlite3.connect(f'{output_filename}.db'),
+                         if_exists='replace', index=False)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+        description='Extracts data from BBVA reports PDF files')
+    parser.add_argument('directory', help='Directory of the PDF files')
+    parser.add_argument('output_format', help='Output format',
+                        choices=['csv', 'sqlite'])
+    parser.add_argument('--output_filename', help='Output filename, default: %(default)s',
+                        default='movements')
+    args = vars(parser.parse_args())
+    main(**args)
