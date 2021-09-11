@@ -1,5 +1,4 @@
 # BBVA reports extractor
-![Build status](https://github.com/blalop/bbva2pandas/workflows/test.yml/badge.svg)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
