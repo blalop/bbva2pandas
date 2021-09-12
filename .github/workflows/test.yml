@@ -24,7 +24,7 @@ jobs:
           pip install flake8 mypy
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with flake8
-        run: flake8 .
+        run: flake8 --per-file-ignores="__init__.py:F401" bbva2pandas
       - name: Lint with mypy
         run: mypy bbva2pandas
       - name: Test with unittest

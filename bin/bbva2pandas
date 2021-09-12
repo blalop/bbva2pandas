@@ -9,15 +9,14 @@ import sys
 import os
 
 try:
-    from bbva2pandas.file_handler import read_report
+    from bbva2pandas import Report
 except ImportError:
     sys.path.append(os.path.abspath('./'))
-    from bbva2pandas.file_handler import read_report
+    from bbva2pandas import Report
 
 
 def read_report_file(filename: str) -> pd.DataFrame:
-    with open(filename, 'rb') as f:
-        return read_report(f)
+    return Report(filename).to_df()
 
 
 def extract_directory(dirname: str) -> pd.DataFrame:
