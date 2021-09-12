@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/blalop/bbva2pandas/tree/develop)
 
+## [1.0.0](https://github.com/idealista/bbva2pandas/tree/1.0.0)
+### Changed
+- API refactoring
+
 ## [0.1.0](https://github.com/idealista/bbva2pandas/tree/0.1.0)
 ### Added
 - Initial release

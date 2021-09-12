@@ -20,18 +20,13 @@ In [bbva.es](https://bbva.es), login and go to Posición global > Cuentas y Tarj
 
 ## Using the libray
 
-You can either provide the file to be read or the raw string:
+Just provide the filepath:
 
 ```python
-from bbva2pandas.file_handler import read_report
-with open(filename, 'rb') as f:
-    dataframe = read_report(f)
+import bbva2pandas
+dataframe = bbva2pandas.Report('myfile').to_df()
 ```
 
-```python
-from bbva2pandas.report_parser import parse_report_content
-dataframe = report_parser.parse_report_content('filecontent')
-```
 
 ## Running the script
 
