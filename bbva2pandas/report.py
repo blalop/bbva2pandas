@@ -5,6 +5,7 @@ from bbva2pandas.pdf import read_pdf
 from bbva2pandas.dataframe import build_dataframe
 from bbva2pandas.typing import FilePathOrBuffer
 
+
 class Report:
     def __init__(self, filepath: FilePathOrBuffer) -> None:
         self.content = read_pdf(filepath)

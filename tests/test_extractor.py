@@ -2,9 +2,8 @@ import unittest
 
 from bbva2pandas import extractor
 
-class TestExtractor(unittest.TestCase):
 
-    
+class TestExtractor(unittest.TestCase):
     def test_year_extraction(self):
         with open('tests/data/pdf-content.txt') as f:
             input = f.read()
