@@ -24,7 +24,7 @@ setup(name='bbva2pandas',
       author='Alejandro Blanco López',
       author_email='alexbl1996@gmail.com',
       license='GPLv3+',
-      packages=find_packages(exclude=['grafana', 'tests']),
+      packages=find_packages(exclude=['tests']),
       keywords='bbva pdf bank regex',
       classifiers=[
           'Development Status :: 4 - Beta',
