@@ -8,15 +8,15 @@ MOVEMENTS_PARSE_REGEX = re.compile(
     \s
     (\d\d/\d\d) #value date
     \s*
-    ([A-ZÑÁÉÍÓÚÜ\'\,\.\:\s]+) #concept
-    \s*
+    ([\wÀ-ÿ .,:*%\'\/()\-\\]+?) #concept
+    \s+
     (-?\d*.?\d*,\d*) #amount of the movement
     \s*
     (\d*.?\d*,\d*) #balance after movement
     \s*
     (\d*) # credit card number
     \s*
-    ([\d\wÑÁÉÍÓÚÜ \.\,\:\*\'\-\/\(\)]*) # subconcept
+    ([\wÀ-ÿ .,:*%\'\/()\-\\]*) # subconcept
     $''',
     re.MULTILINE | re.IGNORECASE | re.VERBOSE
 )
