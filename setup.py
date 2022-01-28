@@ -27,7 +27,7 @@ setup(name='bbva2pandas',
       packages=find_packages(exclude=['tests']),
       keywords='bbva pdf bank regex',
       classifiers=[
-          'Development Status :: 4 - Beta',
+          'Development Status :: 5 - Production/Stable',
           'Intended Audience :: Developers',
           'Intended Audience :: Financial and Insurance Industry',
           'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -40,4 +40,4 @@ setup(name='bbva2pandas',
           'Topic :: Office/Business :: Financial :: Accounting',
           'Typing :: Typed'
       ]
-      )
+)
