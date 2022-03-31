@@ -1,7 +1,7 @@
 import unittest
 
 import pandas as pd
-from pandas._libs.tslibs.timestamps import Timestamp
+from pandas import Timestamp
 
 from bbva2pandas import dataframe
 
