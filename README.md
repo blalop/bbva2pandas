@@ -4,8 +4,6 @@
 
 Library + script to extract your bank account movements from the pdf reports that BBVA provides each month. Export it to csv or sqlite.
 
-A [Grafana dashboard](grafana/bank_movements.json) is provided to visualize this data.
-
 ## Dependencies
 
 The following libpoppler dependencies are needed for pdftotext:
