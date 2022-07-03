@@ -11,7 +11,6 @@ class TestIntegration(unittest.TestCase):
     def test_correct_movement_extraction(self):
         df = Report(self.FILEPATH).to_df()
         movements = df.values.tolist()
-        print(movements)
         expected = [
             [
                 Timestamp("2022-01-31 00:00:00"),
@@ -23,5 +22,4 @@ class TestIntegration(unittest.TestCase):
                 "FRUITES \\ VERDURES NAIMA-BARCELONA ES",
             ]
         ]
-        self.assertEqual(1, len(movements))
         self.assertEqual(expected, movements)
