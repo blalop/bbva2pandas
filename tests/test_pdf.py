@@ -1,5 +1,7 @@
 import unittest
 
+import pdftotext
+
 from bbva2pandas import pdf
 
 
@@ -9,8 +11,8 @@ class TestExtractor(unittest.TestCase):
     def test_with_file_open(self):
         with open(self.FILEPATH, 'rb') as f:
             content = pdf.read_pdf(f)
-        self.assertEqual('abcdef', content)
+        self.assertEqual('abcdef\n\x0c', content)
 
     def test_with_file_path(self):
         content = pdf.read_pdf(self.FILEPATH)
-        self.assertEqual('abcdef', content)
+        self.assertEqual('abcdef\n\x0c', content)
