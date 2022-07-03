@@ -1,7 +1,5 @@
 import unittest
 
-import pdftotext
-
 from bbva2pandas import pdf
 
 
