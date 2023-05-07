@@ -5,13 +5,13 @@ from bbva2pandas import extractor
 
 class TestExtractor(unittest.TestCase):
     def test_year_extraction(self):
-        with open('tests/data/pdf-content.txt') as f:
+        with open('tests/data/pdf-content.txt', encoding='utf-8') as f:
             input = f.read()
         year = extractor.find_year(input)
         self.assertEqual('2050', year)
 
     def test_movements_extraction(self):
-        with open('tests/data/pdf-content.txt') as f:
+        with open('tests/data/pdf-content.txt', encoding='utf-8') as f:
             input = f.read()
         movements = extractor.find_movements(input)
         expected = [('05/08', '05/08',
