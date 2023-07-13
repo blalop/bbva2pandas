@@ -1,24 +1,11 @@
 import re
 
-YEAR_FIND_REGEX = re.compile(r'EXTRACTO DE \w* (\d{4})', re.MULTILINE)
-
+YEAR_FIND_REGEX = re.compile(r"EXTRACTO DE \w* (\d{4})", re.MULTILINE)
 MOVEMENTS_PARSE_REGEX = re.compile(
-    r'''^
-    (\d\d/\d\d) #date
-    \s
-    (\d\d/\d\d) #value date
-    \s*
-    ([\wÀ-ÿ .,:*%\'\/()\-\\]+?) #concept
-    \s+
-    (-?\d*.?\d*,\d*) #amount of the movement
-    \s*
-    (\d*.?\d*,\d*) #balance after movement
-    \s*
-    (\d*) # credit card number
-    \s*
-    ([\wÀ-ÿ .,:*%\'\/()\-\\]*) # subconcept
-    $''',
-    re.MULTILINE | re.IGNORECASE | re.VERBOSE
+    r"^(\d\d/\d\d)\s(\d\d/\d\d)\s*([\wÀ-ÿ .,:*%\'/()\-\\]+?)"
+    r"\s*(-?\d*.?\d*,\d\d)\s*(\d*.?\d*,\d\d)\s*(?:\n\s+"
+    r"(\d*)?\s*([\wÀ-ÿ .,:*%\'/()\-\\]*))?$",
+    re.MULTILINE | re.IGNORECASE | re.VERBOSE,
 )
 
 

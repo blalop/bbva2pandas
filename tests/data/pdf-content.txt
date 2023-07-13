@@ -4,10 +4,13 @@
  Titulares:      JOHN DOE GARCIA
 F.Oper.       F.Valor                                         Concepto                                   Importe                    Saldo
                           SALDO ANTERIOR - - - - - - - - - - - - - - - - - - - - -                                                              0,00
-05/08 05/08               TRANSFERENCIAS                                                                         42,00                        42,00
-                           X
+05/08 05/08            TRANSFERENCIAS                                                                         42,00                        42,00
+                            X
 12/08 10/08            COMPRA EN COMERCIO EXTRANJERO-COMISIÓN 3 % INCLUÍDA                                                         -8,79                      13,55
                             LIDL BCN-CAN BATLL\ BARCELONA
+02/05 02/05            TRASPASO                                                                                                            800,00                            984,57
+02/05 02/05            TRASPASO                                                                                                           -800,00                            184,57
+                            4940197136209771 PERSONA X
    Todos los importes de este extracto se expresan en:                             SALDO A NUESTRO FAVOR               SALDO A SU FAVOR
    EURO                                                                                                                                42,00
                                                                                                                                             F12345
